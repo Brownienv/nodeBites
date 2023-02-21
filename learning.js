@@ -1,10 +1,11 @@
 import { basename } from "node:path";
+import { createInterface } from "node:readline";
+
 console.log("viewing", basename(import.meta.url));
 
-process.stdout.write("write your name ");
+const readline = createInterface(process.stdin, process.stdout);
 
-process.stdin.on("data", (data) => {
-    const name = data.toString().trim();
+readline.question("write your name ", (name) => {
     console.log("your name is", name);
-    process.exit();
+    readline.close();
 });
