@@ -9,4 +9,6 @@ export const download = (filename) => {
         const stream = ytdl(url, { filter: "audioonly" });
         stream.pipe(createWriteStream(filename));
     });
+
+    readline.close();
 };
