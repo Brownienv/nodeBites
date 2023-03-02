@@ -12,5 +12,3 @@ export const write = (filename) => {
         readline.close();
     });
 };
-
-write("test.txt");
