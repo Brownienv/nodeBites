@@ -2,6 +2,7 @@
     "main": "bites_source/downloader.js",
     "type": "module",
     "dependencies": {
+        "typescript": "^4.9.5",
         "ytdl-core": "^4.11.2"
     }
 }
