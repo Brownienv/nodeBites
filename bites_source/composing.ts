@@ -1,10 +1,10 @@
+import { createInterface } from "node:readline";
 import { writeFile } from "node:fs";
-import { createInterface} from "node:readline";
 
-export const write = (filename) => {
+export const write = async (filename: string): Promise<void> => {
     const readline = createInterface(process.stdin, process.stdout);
 
-    readline.question("write the data ", (data) => {
+    readline.question("write the data ", (data: string) => {
         writeFile(filename, data, (err) => {
             console.log(err ? err : "file written");
         });
